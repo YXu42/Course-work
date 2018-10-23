@@ -26,7 +26,6 @@ def draw():
     
     fill(255, 170, 0)
     ellipse(width/2, 410 + y_animated, 150, 150)  #sun
-                                                  #tied to width since I always want it in middle
     
     fill(49, 126, 24)
     rect(0, 420 + y, 640, 580)  #land
@@ -71,7 +70,3 @@ def draw():
     
     fill(255, 225, 0 + ((y_animated + 15) * -3.25), 90)
     rect(0, 0, 640, 580)  #yellow overlay (changes colour until sun stops)
-    
-    fill(255, 255, 255)
-    textSize(10)
-    text(str(mouseX) + ", " + str(mouseY), mouseX, mouseY)  #I just used this to help me find co-ordinates
