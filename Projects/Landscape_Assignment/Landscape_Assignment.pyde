@@ -7,18 +7,18 @@ def setup():
     size(640, 580)
 
 def draw():
-    global x_animated, y, y_animated, x_increments  #x_animated and y_animated is used to change x and y locations,
-                                                    #y is there in case landscape needs to be shifted, didn't want to tie to height
-                                                    #x-increments are used to control the speed of objects horizontally 
+    #x_animated, x_increments, and y_increments are used to change location
+    #y is used to shift objects if needed
+    global x_animated, y, y_animated, x_increments
     
-    x_animated += x_increments  #used to change x value for some objects
+    x_animated += x_increments
     
     if y_animated >= -200:  #controls sun and yellow overlay
         y_animated -= 0.07
         
     if x_animated >= 400:  #controls movement of clouds
         x_increments = -0.1
-    elif x_animated <= 0:  #changes direction by changing x_increments
+    elif x_animated <= 0:
         x_increments = 0.1
     
     background(114, 170, 255)
