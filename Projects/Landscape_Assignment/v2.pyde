@@ -53,7 +53,6 @@ def draw():
     ellipse((x_animated * -1) + 500, 350 + y, 100, 50)
     
     fill(38, 93, 8)
-    
     # bush #1 (far left)
     ellipse(78, 451, 30, 30)
     ellipse(100, 432, 50, 50)
