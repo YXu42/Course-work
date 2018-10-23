@@ -44,11 +44,9 @@ def draw():
     ellipse(x_animated + 169, 260 + y, 96, 60)
     ellipse(x_animated + 109, 260 + y, 96, 60)
     ellipse(x_animated + 89, 220 + y, 96, 60)
-    
     #smaller cloud
     ellipse((x_animated * -1) + 500, 120 + y, 100, 50)
     ellipse((x_animated * -1) + 450, 90 + y, 96, 60)
-    
     #smallest cloud
     ellipse((x_animated * -1) + 500, 350 + y, 100, 50)
     
@@ -63,14 +61,12 @@ def draw():
     ellipse(85, 463, 30, 10)
     ellipse(117, 460, 40, 20)
     ellipse(140, 459, 30, 10)
-    
     #bush #2 (top right)
     ellipse(552, 390, 50, 40)
     ellipse(576, 376, 50, 40)
     ellipse(598, 384, 50, 40)
     ellipse(577, 390, 50, 40)
     ellipse(601, 394, 40, 30)
-    
     #bush #3 (middle)
     ellipse(450, 484, 50, 40)
     ellipse(464, 505, 50, 40)
