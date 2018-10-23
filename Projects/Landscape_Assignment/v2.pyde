@@ -82,7 +82,3 @@ def draw():
     fill(255, 225, 0 + ((y_animated + 15) * -3.25), 90)
     #overlay
     rect(0, 0, 640, 580)
-    
-    fill(255, 255, 255)
-    textSize(10)
-    text(str(mouseX) + ", " + str(mouseY), mouseX, mouseY)  #I just used this to help me find co-ordinates
