@@ -1,0 +1,44 @@
+import random
+
+scale_inc = 0
+poof = 0
+lives = 3
+getRandom = True
+num_ghosts = 0
+
+def setup():
+    size(640, 580)
+    
+def draw():
+    global scale_inc, poof, lives
+    scale_inc += 0.015
+    background (100, 100, 100)
+    noStroke()
+    
+    fill(255, 255, 225, 175 + poof)
+    ghost(50, 50)
+    ghost(300, 300)
+    
+def ghost(x_location, y_location):
+    global scale_inc, poof, lives, getRandom, random_store, num_ghosts
+    num_ghosts += 1
+    
+    if getRandom:
+        random1()
+        getRandom = False
+    
+    rect(x_location, y_location, random_store * scale_inc, random_store * scale_inc)
+    
+    if mousePressed and x_location < mouseX and mouseX < random_store * scale_inc and y_location < mouseY and mouseY < random_store * scale_inc: 
+        poof = - 175
+        num_ghosts -= 1
+        
+    if scale_inc >= 7:
+        lives -= 1
+        if poof >= -175:
+            poof -= 10
+        num_ghosts -= 1
+            
+def random1():
+    global random_store
+    random_store = random.randint(10, 60)
