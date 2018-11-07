@@ -26,32 +26,39 @@ Do the following in steps:
 
 import random
 
-stars_x = []
-stars_y = []
+stars = []
+#drawn_stars = 0
 
-for i in range(0, 100):
-    stars_x.append(random.randint(0, 640))
-    stars_y.append(random.randint(0, 480))
+for star in range(0, 100):
+    stars.append([random.randint(0, 640), random.randint(0, 480)])
 
 def setup():
     size(640, 480)
 
 
 def draw():
-    num_drawn_stars = 0
+    drawn_stars = 0
     
-    for i in range(0, 100):
-        stars_x[i] += 1
+    for star in range(0, len(stars)):
+       stars[star][0] += 0.1
     
-    stars_x.append(random.randint(-640, 0))
-    stars_y.append(random.randint(0, 480))
-    
+    if frameCount % 60 == 0:
+        stars.append([random.randint(-640, 0), random.randint(0, 480)])
+        
+    for star in range(len(stars) - 1, 0, -1):
+        if stars[star][0] >= width:
+            stars.pop(star)
+            
     background(0)
     
     # draw stars
     noStroke()
     fill(255)
     
-    while num_drawn_stars != len(stars_x):
-        ellipse(stars_x[num_drawn_stars], stars_y[num_drawn_stars], 5, 5)
-        num_drawn_stars += 1
+    #Just another version with a for loop instead of a while loop
+    #for star in range(0, len(stars)):
+    #    ellipse(stars[star][0], stars[star][1], 5, 5)
+    
+    while drawn_stars <= len(stars) - 1:
+        ellipse(stars[drawn_stars][0], stars[drawn_stars][1], 5, 5)
+        drawn_stars += 1
