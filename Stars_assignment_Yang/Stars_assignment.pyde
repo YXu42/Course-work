@@ -45,7 +45,7 @@ def draw():
     for star in range(0, len(stars)):
        stars[star][0] += 0.1
         
-    for star in range(len(stars) - 1, 0, -1):   #For loop removes stars from back of list to front to avoid index error
+    for star in range(len(stars) - 1, 0, -1):  #For loop removes stars from back of list to front to avoid index out of bounds error
         if stars[star][0] >= width + 7:
             stars.pop(star)
     
