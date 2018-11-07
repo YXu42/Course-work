@@ -34,27 +34,25 @@ for star in range(0, 100):
 def setup():
     size(640, 480)
 
-
 def draw():
     drawn_stars = 0
             
     background(0)
     
-    # draw stars
     noStroke()
     fill(255)
    
-    for star in range(0, len(stars)):
-       stars[star][0] += 0.1
-    
     if frameCount % 60 == 0:
         stars.append([random.randint(-640, 0), random.randint(0, 480)])
+   
+    for star in range(0, len(stars)):
+       stars[star][0] += 0.1
         
-    for star in range(len(stars) - 1, 0, -1):
+    for star in range(len(stars) - 1, 0, -1):   #For loop removes stars from back of list to front to avoid index error
         if stars[star][0] >= width:
             stars.pop(star)
     
-    #Just another version with a for loop instead of a while loop
+    #Another version with a for loop instead of a while loop
     #for star in range(0, len(stars)):
     #    ellipse(stars[star][0], stars[star][1], 5, 5)
     
