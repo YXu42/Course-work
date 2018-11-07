@@ -27,7 +27,6 @@ Do the following in steps:
 import random
 
 stars = []
-#drawn_stars = 0
 
 for star in range(0, 100):
     stars.append([random.randint(0, 640), random.randint(0, 480)])
