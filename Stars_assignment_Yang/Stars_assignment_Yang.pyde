@@ -37,7 +37,13 @@ def setup():
 
 def draw():
     drawn_stars = 0
+            
+    background(0)
     
+    # draw stars
+    noStroke()
+    fill(255)
+   
     for star in range(0, len(stars)):
        stars[star][0] += 0.1
     
@@ -47,12 +53,6 @@ def draw():
     for star in range(len(stars) - 1, 0, -1):
         if stars[star][0] >= width:
             stars.pop(star)
-            
-    background(0)
-    
-    # draw stars
-    noStroke()
-    fill(255)
     
     #Just another version with a for loop instead of a while loop
     #for star in range(0, len(stars)):
