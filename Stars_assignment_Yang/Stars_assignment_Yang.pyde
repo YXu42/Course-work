@@ -21,9 +21,6 @@ Do the following in steps:
    stars[0][1]  # the first star's y coordinate, y1
 """
 
-# two lists with three stars' xy coordinates
-# (50, 200), (100, 250), (150, 300)
-
 import random
 
 stars = []
