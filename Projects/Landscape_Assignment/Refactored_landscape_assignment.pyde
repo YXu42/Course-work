@@ -35,10 +35,6 @@ def movement_changes(x_movement_speed, y_movement_speed):
         
     #Controls movement of clouds
     x_animated += x_movement_speed
-    if x_animated >= 400:
-        x_movement_speed *= -1
-    elif x_animated <= 0:
-        x_movement_speed *= -1
 
 def draw_sun():
     fill(255, 170, 0)
