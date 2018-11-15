@@ -16,8 +16,12 @@ def draw():
     
     draw_sun()
     draw_land(0, 420)
-    draw_clouds(139, 230)
-    draw_bushes(78, 451)
+    draw_big_cloud(139, 230)
+    draw_medium_cloud(500, 120)
+    draw_small_cloud(500, 350)
+    draw_bush_v1(78, 451)
+    draw_bush_v2(552, 390)
+    draw_bush_v3(450, 484)
     draw_overlay()
 
 def movement_changes():
@@ -48,7 +52,7 @@ def draw_land(x, y):
     ellipse(x + 480, y + 20, 300, 100)
     ellipse(x + 640, y + 30, 300, 100)
     
-def draw_clouds(x, y):
+def draw_big_cloud(x, y):
     fill(255, 255, 255, 220)
     #big cloud
     ellipse(x_animated + x, y, 100, 50)
@@ -56,14 +60,18 @@ def draw_clouds(x, y):
     ellipse(x_animated + x - 30, y + 30, 96, 60)
     ellipse(x_animated + x - 50, y - 10, 96, 60)
     
+def draw_medium_cloud(x, y):
+    fill(255, 255, 255, 220)
     #smaller cloud
-    ellipse((x_animated * -1) + x + 361, y - 110, 100, 50)
-    ellipse((x_animated * -1) + x + 311, y - 140, 96, 60)
+    ellipse((x_animated * -1) + x, y, 100, 50)
+    ellipse((x_animated * -1) + x - 50, y - 30, 96, 60)
     
+def draw_small_cloud(x, y):
+    fill(255, 255, 255, 220)
     #smallest cloud
-    ellipse((x_animated * -1) + x + 361, y + 120, 100, 50)
+    ellipse((x_animated * -1) + x, y, 100, 50)
     
-def draw_bushes(x, y):
+def draw_bush_v1(x, y):
     fill(38, 93, 8)
     # bush #1 (far left)
     ellipse(x, y, 30, 30)
@@ -76,19 +84,23 @@ def draw_bushes(x, y):
     ellipse(x + 39, y + 9, 40, 20)
     ellipse(x + 62, y + 8, 30, 10)
     
+def draw_bush_v2(x, y):
+    fill(38, 93, 8)
     #bush #2 (top right)
-    ellipse(x + 474, y - 61, 50, 40)
-    ellipse(x + 498, y - 75, 50, 40)
-    ellipse(x + 520, y - 67, 50, 40)
-    ellipse(x + 499, y - 61, 50, 40)
-    ellipse(x + 523, y - 57, 40, 30)
+    ellipse(x, y, 50, 40)
+    ellipse(x + 24, y - 14, 50, 40)
+    ellipse(x + 46, y - 6, 50, 40)
+    ellipse(x + 25, y, 50, 40)
+    ellipse(x + 49, y + 4, 40, 30)
     
-    #bush #3 (middle)
-    ellipse(x + 372, y + 33, 50, 40)
-    ellipse(x + 386, y + 54, 50, 40)
-    ellipse(x + 354, y + 55, 50, 40)
-    ellipse(x + 322, y + 55, 50, 40)
-    ellipse(x + 338, y + 39, 50, 40)
+def draw_bush_v3(x, y):
+    fill(38, 93, 8)
+    #bush #3 (middle) # 372, 33
+    ellipse(x, y, 50, 40)
+    ellipse(x + 14, y + 21, 50, 40)
+    ellipse(x - 18, y + 22, 50, 40)
+    ellipse(x - 50, y + 22, 50, 40)
+    ellipse(x - 32, y + 6, 50, 40)
     
 def draw_overlay():
     fill(255, 225, 0 + ((y_animated + 15) * -3.25), 90)
