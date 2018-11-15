@@ -8,7 +8,7 @@ def draw():
     #x_animated, and y_increments are used to change location
     global x_animated, y_animated
     
-    movement_changes(0.1)
+    movement_changes(0.1, 0.07)
     
     background(114, 170, 255)
     noStroke()
@@ -26,15 +26,15 @@ def draw():
     draw_bush_v3(450, 484)
     draw_overlay()
 
-def movement_changes(x_movement_speed):
+def movement_changes(x_movement_speed, y_movement_speed):
     global x_animated, y_animated
-    x_animated += x_movement_speed
     
     #Controls sun and yellow overlay
     if y_animated >= -200:
-        y_animated -= 0.07
+        y_animated -= y_movement_speed
         
     #Controls movement of clouds
+    x_animated += x_movement_speed
     if x_animated >= 400:
         x_movement_speed *= -1
     elif x_animated <= 0:
